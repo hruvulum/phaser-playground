@@ -7,9 +7,22 @@ export class Editor {
     constructor(el: HTMLElement, initFile: string, storageKey: string, safeDelay: number = 5000) {
         this.editor = monaco.editor.create(el, {
             automaticLayout: true,
-            language: "typescript",
-            scrollBeyondLastLine: false,
-            value: window.localStorage.getItem(storageKey) || initFile,
+            language: "text/plain",
+            scrollBeyondLastLine: true,
+            // tslint:disable-next-line: max-line-length
+            value: "The hash part of component paths is highly distinctive, e.g., 5jq6jgkamxjj.... Therefore we can discover retained dependencies generically, independent of specific file formats, by scanning for occurrences of hash parts. For instance, the executable image in Figure 2.4 contains the highlighted string 5jq6jgkamxjj..., which is evidence that an execution of the svn program might need that particular OpenSSL instance.\n\n",
+            fontFamily: "Helvetica",
+            // {fontSize: 14} worked well, but let us test drive the default
+            wordWrap: "wordWrapColumn",
+            wordWrapColumn: 70,
+            disableMonospaceOptimizations: true,
+            codeLens: false,
+            cursorBlinking: "solid",
+            quickSuggestions: false,
+            minimap: {enabled: false},
+            occurrencesHighlight: false,
+            selectionHighlight: false,
+            highlightActiveIndentGuide: false,
         });
         let safeTimeout: number;
         this.editor.onDidChangeModelContent(() => {
