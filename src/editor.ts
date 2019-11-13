@@ -11,6 +11,7 @@ export class Editor {
             scrollBeyondLastLine: true,
             // tslint:disable-next-line: max-line-length
             value: "The hash part of component paths is highly distinctive, e.g., 5jq6jgkamxjj.... Therefore we can discover retained dependencies generically, independent of specific file formats, by scanning for occurrences of hash parts. For instance, the executable image in Figure 2.4 contains the highlighted string 5jq6jgkamxjj..., which is evidence that an execution of the svn program might need that particular OpenSSL instance.\n\n",
+            // tslint:disable-next-line: object-literal-sort-keys
             fontFamily: "Helvetica",
             // {fontSize: 14} worked well, but let us test drive the default
             wordWrap: "wordWrapColumn",
@@ -23,6 +24,7 @@ export class Editor {
             occurrencesHighlight: false,
             selectionHighlight: false,
             highlightActiveIndentGuide: false,
+            readOnly: true,
         });
         let safeTimeout: number;
         this.editor.onDidChangeModelContent(() => {
