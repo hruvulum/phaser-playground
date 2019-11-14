@@ -24,7 +24,8 @@ export class Editor {
             occurrencesHighlight: false,
             selectionHighlight: false,
             highlightActiveIndentGuide: false,
-            readOnly: true,
+            l
+            // setting readOnly to true worked as expected.
         });
         let safeTimeout: number;
         this.editor.onDidChangeModelContent(() => {
